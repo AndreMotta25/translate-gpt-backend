@@ -19,7 +19,7 @@ app.post("/translate", async (request:Request, response: Response) => {
 
   const content = await api.chat.completions.create({
     messages:[
-      {role:"system",content:"You will receive a text in English and your task is to translate it into Brazilian Portuguese. Be consistent and understand the context. Do not translate proper names or nouns. Try not to be redundant. "},
+      {role:"system",content:"You will receive a text in English and your task is to translate it into Brazilian Portuguese. Be consistent and understand the context. Do not translate proper names or nouns. Try not to be redundant. If there are html tags, keep them "},
       {role:"user", content: text}],
     model:'gpt-3.5-turbo'
   })
