@@ -7,8 +7,7 @@ import axios from 'axios';
 
 const app = express();
 
-app.use(cors({origin:"https://www.npmjs.com",
-              optionsSuccessStatus: 200}));
+app.use(cors());
 app.use(json());
 
 app.post("/translate", async (request:Request, response: Response) => {
