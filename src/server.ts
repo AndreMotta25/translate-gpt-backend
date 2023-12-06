@@ -12,6 +12,7 @@ export const runtime = 'edge'
 app.use(cors());
 app.use(json());
 
+
 app.post("/translate", async (request:Request, response: Response) => {
   console.log('aqui')
   const {text, apiKey: key, org} = request.body; 
@@ -31,7 +32,8 @@ app.post("/translate", async (request:Request, response: Response) => {
 app.post("/translate-stream", async (request:Request, response: Response) => {
   console.log('aqui')
   const {text, apiKey: key, org} = request.body; 
-
+  
+  console.log(text)
   const api = new OpenAI({
     apiKey: key,
   }) 
